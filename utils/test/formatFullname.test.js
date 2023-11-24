@@ -79,6 +79,20 @@ describe('formatFullname', () => {
     expect(result).to.equal(expected);
   });
 
+  it('should return "Error" when given a name with non-alphabetic characters', () => {
+    const fullName = 'John123 Doe';
+    const expected = 'Error';
+    const result = formatFullname(fullName);
+    expect(result).to.equal(expected);
+  });
+
+  it('should return "Error" when given a name with at least three words separated by space', () => {
+    const fullName = 'John Doe Smith';
+    const expected = 'Error';
+    const result = formatFullname(fullName);
+    expect(result).to.equal(expected);
+  });
+
 });
 
 

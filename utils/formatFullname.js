@@ -5,5 +5,6 @@ module.exports = (fullName) => {
   if(nameParts.length === 1) return `${nameParts[0].charAt(0).toUpperCase()}${nameParts[0].slice(1).toLowerCase()}`;
   const [ firstName, lastName ] = nameParts;
   if (!/^[a-zA-Z]+$/.test(firstName) || !/^[a-zA-Z]+$/.test(lastName)) return 'Error';
+  if (firstName.length < 1 || lastName.length < 1) return 'Error';
   return `${lastName.charAt(0).toUpperCase()}${lastName.slice(1).toLowerCase()}, ${firstName.charAt(0).toUpperCase()}${firstName.slice(1).toLowerCase()}`;
 }
